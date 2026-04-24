@@ -1,201 +1,111 @@
 # 🎮 Legends of Java - Sistema RPG
 
-## 📋 Descrição
+## 📌 Sobre o projeto
 
-Este projeto foi desenvolvido como exercício prático de **Programação Orientada a Objetos (POO)** em Java.
+Este projeto foi desenvolvido como prática de Programação Orientada a Objetos em Java, simulando um sistema simples de RPG.
 
-O sistema simula um RPG (Role-Playing Game) com diferentes tipos de personagens que podem batalhar, utilizar habilidades especiais e evoluir de nível.
+A ideia é representar um mundo onde diferentes tipos de personagens podem lutar entre si, usar habilidades especiais e evoluir conforme ganham experiência.
 
 ---
 
-## 🎯 Objetivo
+## 🧠 O que o sistema faz
 
-Aplicar na prática os principais conceitos de POO:
+O sistema gira em torno de personagens que possuem atributos como vida, mana, ataque e defesa. Cada personagem pode interagir em batalhas, receber dano, se curar e ganhar experiência ao derrotar inimigos.
 
-* Classes e Objetos
-* Encapsulamento
+Com o tempo, esses personagens evoluem de nível, ficando mais fortes e desbloqueando melhorias nos seus atributos.
+
+---
+
+## ⚔️ Personagens disponíveis
+
+O jogo conta com três tipos principais de personagens:
+
+* **Guerreiro** ⚔️
+  Focado em combate físico, possui alto poder de ataque e boa defesa.
+
+* **Mago** 🔮
+  Utiliza mana para lançar feitiços poderosos e ataques mágicos de grande dano.
+
+* **Arqueiro** 🏹
+  Especialista em ataques à distância, utilizando flechas e ataques rápidos.
+
+Cada classe possui sua própria habilidade especial, tornando o combate mais estratégico.
+
+---
+
+## 🔥 Sistema de batalha
+
+As batalhas acontecem entre dois personagens até que um deles perca toda sua vida.
+
+Durante o combate:
+
+* Cada personagem ataca na sua vez
+* O dano é calculado com base em ataque e defesa
+* É possível usar habilidades especiais
+* Personagens podem ser derrotados e ganhar experiência
+
+---
+
+## 📈 Evolução dos personagens
+
+Ao ganhar experiência, os personagens podem subir de nível.
+
+Quando isso acontece:
+
+* Seus atributos aumentam (vida, mana, ataque e defesa)
+* A vida e mana são restauradas
+* A experiência é resetada para continuar a evolução
+
+Isso cria uma progressão natural de poder durante o jogo.
+
+---
+
+## 🏆 Torneio
+
+Além das batalhas normais, o sistema também permite um torneio entre vários personagens.
+
+Nesse modo:
+
+* Os personagens se enfrentam em duelos eliminatórios
+* O vencedor segue para a próxima rodada
+* O processo continua até restar apenas um campeão
+
+---
+
+## 🧱 Organização do projeto
+
+O projeto foi organizado em pacotes para manter uma boa estrutura:
+
+* **modelo** → classes dos personagens
+* **sistema** → lógica de batalha (Arena)
+* **principal** → execução do jogo
+
+---
+
+## 🎯 Conceitos aplicados
+
+Este projeto foi desenvolvido com foco em:
+
+* Classes abstratas
 * Herança
 * Polimorfismo
-* Classes Abstratas
-* Métodos Abstratos
-* Sobrescrita de Métodos
-* Construtores
+* Encapsulamento
+* Sobrescrita de métodos
+* Estruturas de repetição e lógica de combate
 * Uso de ArrayList
 
 ---
 
-## ⚙️ Funcionalidades
+## ▶️ Como executar
 
-### 🧙‍♂️ Personagens
+Basta executar a classe principal `JogoRPG`, localizada no pacote principal.
 
-* Guerreiro ⚔️
-* Mago 🔮
-* Arqueiro 🏹
-
-Cada personagem possui:
-
-* Vida e Mana
-* Ataque e Defesa
-* Habilidade especial única
-* Sistema de experiência e evolução
+Ela cria os personagens, demonstra o sistema e executa batalhas e torneios automaticamente.
 
 ---
 
-### ⚔️ Sistema de Combate
+## 🚀 Considerações finais
 
-* Batalhas entre personagens
-* Cálculo de dano baseado em atributos
-* Verificação de morte
-* Ganho de experiência ao derrotar inimigos
+Este projeto foi uma forma de praticar conceitos fundamentais de Java de forma mais divertida, simulando um sistema de jogo.
 
----
-
-### ✨ Habilidades Especiais
-
-* **Guerreiro**: Investida Furiosa
-* **Mago**: Meteoro Arcano
-* **Arqueiro**: Chuva de Flechas
-
----
-
-### 📈 Sistema de Progressão
-
-* Ganho de experiência (EXP)
-* Level up automático ao atingir 100 EXP
-* Aumento de atributos:
-
-  * Vida
-  * Mana
-  * Ataque
-  * Defesa
-
----
-
-### 🏆 Torneio
-
-* Sistema eliminatório
-* Personagens lutam até restar um campeão
-
----
-
-## 🧱 Estrutura do Projeto
-
-```text
-src/
-└── br/com/rpg/
-    ├── modelo/
-    │   ├── Personagem.java
-    │   ├── Guerreiro.java
-    │   ├── Mago.java
-    │   └── Arqueiro.java
-    │
-    ├── sistema/
-    │   └── Arena.java
-    │
-    └── principal/
-        └── JogoRPG.java
-```
-
----
-
-## 🧠 Conceitos de POO Aplicados
-
-### ✔️ Classe Abstrata
-
-* `Personagem` define estrutura base para todos os personagens
-
-### ✔️ Herança
-
-* Guerreiro, Mago e Arqueiro herdam de `Personagem`
-
-### ✔️ Polimorfismo
-
-* Uso de `ArrayList<Personagem>` para tratar diferentes classes de forma uniforme
-
-### ✔️ Encapsulamento
-
-* Atributos protegidos e controle de acesso via métodos
-
-### ✔️ Sobrescrita de Métodos
-
-* Cada classe implementa seu próprio `atacar()` e `usarHabilidadeEspecial()`
-
----
-
-## ▶️ Como Executar
-
-1. Abra o projeto no **IntelliJ IDEA**
-2. Navegue até:
-
-   ```
-   br.com.rpg.principal.JogoRPG
-   ```
-3. Execute a classe com método `main`
-4. Acompanhe a execução pelo console
-
----
-
-## 🧪 Demonstrações no Código
-
-* Criação de personagens
-* Uso de polimorfismo
-* Execução de habilidades especiais
-* Sistema de experiência e level up
-* Batalha entre personagens
-* Torneio completo
-
----
-
-## 📌 Requisitos Atendidos
-
-### ✔️ Técnicos
-
-* Classe abstrata implementada
-* Métodos abstratos utilizados
-* 3 classes concretas criadas
-* Uso de polimorfismo
-* Encapsulamento aplicado
-* Construtores implementados
-* Sobrescrita com `@Override`
-
-### ✔️ Funcionais
-
-* Sistema de combate funcional
-* Sistema de experiência e evolução
-* Habilidades únicas por classe
-* Gerenciamento de recursos (vida, mana, flechas)
-* Batalhas entre personagens
-* Torneio eliminatório
-
----
-
-## 🏆 Versão
-
-**v1.0** – Sistema completo funcional
-
----
-
-## ✨ Autor
-
-Daniel Dornelas
-
----
-
-## 🚀 Melhorias Futuras
-
-* Interface gráfica (JavaFX/Swing)
-* Sistema de itens (poções, armas)
-* Entrada de dados com Scanner
-* Sistema de crítico e esquiva
-* Novas classes de personagens
-
----
-
-## 📷 (Opcional)
-
-Adicione aqui prints da execução do sistema
-
-```
-Exemplo:
-![Batalha](link_da_imagem)
-```
+A lógica pode ser expandida futuramente com novas classes, habilidades e sistemas mais complexos.
